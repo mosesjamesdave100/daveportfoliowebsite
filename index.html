@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dave100 | YouTube Growth & Channel Strategy</title>
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('moses-theme');
+    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+  }catch(e){}
+  try{
+    if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+    if(!location.hash){ window.scrollTo(0, 0); }
+  }catch(e){}
+})();
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png">
+<link rel="apple-touch-icon" href="images/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="logo"><img src="images/logo-badge.png" alt="Dave100 logo" class="logo-icon">Dave<span>100</span></a>
+    <div class="nav-links">
+      <a href="#top" class="is-current">Home</a>
+      <a href="about.html">About</a>
+      <div class="nav-dropdown" id="servicesDropdown">
+        <button type="button" class="nav-dropdown-trigger" id="servicesDropdownBtn" aria-expanded="false" aria-haspopup="true">
+          Services
+          <svg class="chevron" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dropdown-panel" id="servicesDropdownPanel" role="menu">
+          <a href="services/automation.html" role="menuitem"><span>01</span>YouTube Automation</a>
+          <a href="services/marketing.html" role="menuitem"><span>02</span>YouTube Marketing</a>
+          <a href="services/editing.html" role="menuitem"><span>03</span>Video Editing</a>
+          <a href="services/seo.html" role="menuitem"><span>04</span>YouTube SEO</a>
+          <a href="services/optimization.html" role="menuitem"><span>05</span>Channel Optimization</a>
+          <a href="services/twitch.html" role="menuitem"><span>06</span>Twitch Marketing</a>
+          <a href="services/music.html" role="menuitem"><span>07</span>Music Promotion</a>
+          <a href="services/obs-studio.html" role="menuitem"><span>08</span>Twitch OBS Studio</a>
+          <a href="services/merch.html" role="menuitem"><span>09</span>Merch & Website Design</a>
+        </div>
+      </div>
+      <a href="#results">Results</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button type="button" class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="4" cy="6" r="1.3" fill="currentColor"/><path d="M9 6h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="4" cy="12" r="1.3" fill="currentColor"/><path d="M9 12h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="4" cy="18" r="1.3" fill="currentColor"/><path d="M9 18h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" title="Switch theme">
+        <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.55 1.55M17.85 17.85l1.55 1.55M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.55-1.55M17.85 6.15l1.55-1.55" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <a href="#contact" class="nav-cta">Work with me</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer-overlay" id="mobileDrawerOverlay" aria-hidden="true"></div>
+<aside class="mobile-drawer" id="mobileDrawer" role="dialog" aria-label="Site menu" aria-hidden="true">
+  <div class="mobile-drawer-head">
+    <div class="logo">Dave<span>100</span></div>
+    <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-drawer-links" aria-label="Mobile site navigation">
+    <a href="#top" class="is-current">Home</a>
+    <a href="about.html">About</a>
+
+    <div class="mobile-drawer-group" id="drawerServicesGroup">
+      <button type="button" class="mobile-drawer-group-trigger" id="drawerServicesTrigger" aria-expanded="false">
+        Services
+        <svg class="chevron" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="mobile-drawer-group-panel">
+        <div>
+          <div class="mobile-drawer-sublinks">
+          <a href="services/automation.html">YouTube Automation</a>
+          <a href="services/marketing.html">YouTube Marketing</a>
+          <a href="services/editing.html">YouTube Video Editing</a>
+          <a href="services/seo.html">YouTube SEO</a>
+          <a href="services/optimization.html">Channel Optimization</a>
+          <a href="services/twitch.html">Twitch Marketing</a>
+          <a href="services/music.html">Music Promotion</a>
+          <a href="services/obs-studio.html">Twitch OBS Studio</a>
+          <a href="services/merch.html">Merch & Website Design</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mobile-drawer-section-title">Resources</div>
+    <a href="#results">Results</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+
+    <div class="mobile-drawer-section-title">Connect</div>
+          <a href="https://www.upwork.com/freelancers/~0114f103cef5f4c0cb?mp_source=share" target="_blank" rel="noopener noreferrer">Upwork <span class="ext-arrow">↗</span></a>
+          <a href="https://www.fiverr.com/daveexpertsolut" target="_blank" rel="noopener noreferrer">Fiverr <span class="ext-arrow">↗</span></a>
+          <a href="https://www.instagram.com/dave100expert?igsh=YXFxeG90dHRzeHRy" target="_blank" rel="noopener noreferrer">Instagram <span class="ext-arrow">↗</span></a>
+          <a href="https://www.tiktok.com/@dave100pro?_r=1&_t=ZS-98qjq34Yhjo" target="_blank" rel="noopener noreferrer">TikTok <span class="ext-arrow">↗</span></a>
+          <a href="https://x.com/mosesmiracle111?s=11" target="_blank" rel="noopener noreferrer">X <span class="ext-arrow">↗</span></a>
+          <a href="https://www.linkedin.com/in/james-miracle-34a6613b3?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn <span class="ext-arrow">↗</span></a>
+  </nav>
+  <div class="mobile-drawer-foot">
+    <a href="#contact" class="nav-cta">Work with me</a>
+  </div>
+</aside>
+
+<header class="hero">
+  <div class="hero-bg-video-wrap" aria-hidden="true">
+    <video class="hero-bg-video" src="videos/about-page-bg.mp4" autoplay muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-intro">
+      <div class="eyebrow">Available for new channels</div>
+      <h1>I turn quiet <span class="rotating-word" id="rotatingWord">YouTube</span> channels into <span class="highlight">channels that get watched.</span></h1>
+      <div class="hero-copy">
+        <p>I help YouTube creators fix the things that quietly kill growth: bad packaging, weak SEO, slow uploads, and channels nobody is managing. I use real data, not guesswork, so every change has a clear reason behind it.</p>
+        <p>Whether you're just starting out or already have thousands of subscribers, I build a simple plan you can follow, then help you run it. No jargon, no vague promises, just a clear next step.</p>
+      </div>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Start a project</a>
+        <a href="#results" class="btn-secondary">See the results</a>
+      </div>
+      <div class="hero-trust">
+        <span>Real client results</span>
+        <span>Reply within 1 hour</span>
+        <span>Free first channel audit</span>
+      </div>
+    </div>
+    <div class="hero-orbit" id="heroOrbit">
+      <div class="orbit-ring orbit-ring-outer" aria-hidden="true">
+        <div class="orbit-item" style="--angle:0deg"><span class="orbit-label"><i class="orbit-mark"></i>YouTube Growth</span></div>
+        <div class="orbit-item" style="--angle:72deg"><span class="orbit-label"><i class="orbit-mark"></i>YouTube SEO</span></div>
+        <div class="orbit-item" style="--angle:144deg"><span class="orbit-label"><i class="orbit-mark"></i>Channel Management</span></div>
+        <div class="orbit-item" style="--angle:216deg"><span class="orbit-label"><i class="orbit-mark"></i>YouTube Promotion</span></div>
+        <div class="orbit-item" style="--angle:288deg"><span class="orbit-label"><i class="orbit-mark"></i>Music Promotion</span></div>
+      </div>
+      <div class="orbit-ring orbit-ring-inner" aria-hidden="true">
+        <div class="orbit-item orbit-badge-item" style="--angle:30deg"><span class="orbit-badge">72.7M+ Views</span></div>
+        <div class="orbit-item orbit-badge-item" style="--angle:150deg"><span class="orbit-badge">1.6M+ Views</span></div>
+        <div class="orbit-item orbit-badge-item" style="--angle:270deg"><span class="orbit-badge">303K+ Subscribers</span></div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-roll" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="hero-photo" id="heroPhoto">
+          <video class="hero-photo-glow" src="videos/hero-profile-glow.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+          <canvas class="hero-bg-particles" id="heroBgParticles" aria-hidden="true"></canvas>
+          <img src="images/profile-cutout.png" alt="Moses" id="heroPhotoImg">
+          <div class="hero-sweep" aria-hidden="true"></div>
+        </div>
+        <div class="hero-signature">
+          <div class="hero-name" id="heroName" data-text="Moses James"></div>
+          <div class="hero-logo">DAVE<em>100</em></div>
+        </div>
+        <div class="hero-stat-chip">
+          <div class="num" data-count="74" data-decimals="0">74</div>
+          <div class="label">Completed projects</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="statbar reveal">
+  <div class="wrap statbar-inner">
+    <div class="stat"><div class="num" data-count="72.7" data-suffix="M+" data-decimals="1">72.7M+</div><div class="label">Views generated</div></div>
+    <div class="stat"><div class="num" data-count="14.9" data-prefix="$" data-suffix="K" data-decimals="1">$14.9K</div><div class="label">First partner payout, one client</div></div>
+    <div class="stat"><div class="num" data-count="335" data-suffix="%" data-decimals="0">335%</div><div class="label">View growth, one channel</div></div>
+    <div class="stat"><div class="num" data-count="5.0" data-suffix="★" data-decimals="1">5.0★</div><div class="label">Average recent rating</div></div>
+  </div>
+</div>
+
+<div class="logo-ticker-wrap reveal">
+  <div class="logo-ticker-label">Brands & channels I've worked with</div>
+  <div class="logo-ticker">
+    <div class="logo-ticker-track">
+      <img src="images/logo-haddzy.jpg" alt="Haddzy">
+      <img src="images/logo-dave100expert.jpg" alt="Dave100 Expert">
+      <img src="images/logo-gamer-neon.jpg" alt="Gaming channel brand">
+      <img src="images/logo-moon2.png" alt="Moon2">
+      <img src="images/logo-lutnick.png" alt="Lutnick, Adegbola Popoola">
+      <img src="images/logo-anime-avatar.jpg" alt="Anime channel avatar">
+      <img src="images/logo-purple-cat.webp" alt="Purple cat channel avatar">
+      <img src="images/logo-studio-setup-purple.jpg" alt="Music production studio setup">
+      <img src="images/logo-gaming-setup-red.jpg" alt="Gaming streaming setup">
+      <img src="images/logo-panel-template-red.jpg" alt="Twitch panel template, red theme">
+      <img src="images/logo-panel-template-blue.jpg" alt="Twitch overlay template, blue theme">
+      <img src="images/logo-shinochu.jpg" alt="Shinochu channel logo">
+      <img src="images/logo-daxua-gaming.jpg" alt="Daxua Gaming channel logo">
+      <img src="images/logo-gaming-careers-setup.jpg" alt="Gaming Careers streaming setup">
+      <img src="images/logo-game-room-neon.jpg" alt="Neon Game Room setup">
+      <img src="images/logo-purple-rgb-desk.jpg" alt="Purple RGB gaming desk setup">
+      <img src="images/proof-twitch-overlay-template-purple.jpg" alt="Purple Twitch overlay template">
+      <img src="images/logo-haddzy.jpg" alt="Haddzy" aria-hidden="true">
+      <img src="images/logo-dave100expert.jpg" alt="Dave100 Expert" aria-hidden="true">
+      <img src="images/logo-gamer-neon.jpg" alt="Gaming channel brand" aria-hidden="true">
+      <img src="images/logo-moon2.png" alt="Moon2" aria-hidden="true">
+      <img src="images/logo-lutnick.png" alt="Lutnick, Adegbola Popoola" aria-hidden="true">
+      <img src="images/logo-anime-avatar.jpg" alt="Anime channel avatar" aria-hidden="true">
+      <img src="images/logo-purple-cat.webp" alt="Purple cat channel avatar" aria-hidden="true">
+      <img src="images/logo-studio-setup-purple.jpg" alt="Music production studio setup" aria-hidden="true">
+      <img src="images/logo-gaming-setup-red.jpg" alt="Gaming streaming setup" aria-hidden="true">
+      <img src="images/logo-panel-template-red.jpg" alt="Twitch panel template, red theme" aria-hidden="true">
+      <img src="images/logo-panel-template-blue.jpg" alt="Twitch overlay template, blue theme" aria-hidden="true">
+      <img src="images/logo-shinochu.jpg" alt="Shinochu channel logo" aria-hidden="true">
+      <img src="images/logo-daxua-gaming.jpg" alt="Daxua Gaming channel logo" aria-hidden="true">
+      <img src="images/logo-gaming-careers-setup.jpg" alt="Gaming Careers streaming setup" aria-hidden="true">
+      <img src="images/logo-game-room-neon.jpg" alt="Neon Game Room setup" aria-hidden="true">
+      <img src="images/logo-purple-rgb-desk.jpg" alt="Purple RGB gaming desk setup" aria-hidden="true">
+      <img src="images/proof-twitch-overlay-template-purple.jpg" alt="Purple Twitch overlay template" aria-hidden="true">
+    </div>
+  </div>
+</div>
+
+<section class="section about-preview" id="about-preview">
+  <div class="wrap">
+    <div class="about-preview-inner reveal">
+      <span class="section-eyebrow">About Dave100</span>
+      <h2>Data-driven YouTube growth expert</h2>
+      <p>With over 5 years specializing in YouTube analytics and automation, I've helped 300+ creators transform their channels into sustainable businesses. My approach combines advanced data analysis, proven automation systems, and strategic content optimization to deliver measurable, consistent growth.</p>
+      <p class="about-preview-emphasis">I don't believe in shortcuts or gimmicks. Just data-driven strategies that work.</p>
+      <div class="about-preview-stats">
+        <div class="stat"><div class="num">5+</div><div class="label">Years experience</div></div>
+        <div class="stat"><div class="num">300+</div><div class="label">Creators helped</div></div>
+      </div>
+      <a href="about.html" class="btn-secondary">More about me →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section quote-section" id="quote">
+  <div class="wrap">
+    <blockquote class="pull-quote reveal">
+      <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+      <p>Success on YouTube isn't about luck or going viral. It's about understanding the data, building efficient systems, and staying consistent.</p>
+      <cite>Dave100</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="section service-has-bg-video" id="services">
+  <div class="service-bg-video-wrap" aria-hidden="true">
+    <video class="service-bg-video" src="videos/about-page-bg.mp4" autoplay muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="wrap">
+    <div class="page-hero reveal" style="margin-bottom:52px;">
+      <span class="section-eyebrow">Services</span>
+      <h2>Everything a channel needs to grow</h2>
+      <p>Pick one service or bundle a few. Click any card for the full breakdown and the tools I use.</p>
+    </div>
+    <div class="services-grid">
+      <a class="service-card" id="service-automation" href="services/automation.html">
+        <div class="service-proof"><video src="videos/promo-automation.mp4" poster="images/poster-promo-automation.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+        <div class="service-icon">⚙️</div>
+        <h3>YouTube Automation</h3>
+        <div class="service-outcome">A channel that keeps publishing and growing while you're offline.</div>
+        <span class="service-card-hint">See details →</span>
+      </a>
+      <a class="service-card" id="service-marketing" href="services/marketing.html">
+        <div class="service-proof"><video src="videos/promo-marketing-bg.mp4" poster="images/poster-promo-marketing.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+        <div class="service-icon">📈</div>
+        <h3>YouTube Marketing</h3>
+        <div class="service-outcome">Your videos reach the people already searching for them.</div>
+        <span class="service-card-hint">See details →</span>
+      </a>
+      <a class="service-card" id="service-editing" href="services/editing.html">
+        <div class="service-proof"><img src="images/proof-video-editor.jpg" alt="Video editing workspace, raw footage turned into a polished cut"></div>
+        <div class="service-icon">✂️</div>
+        <h3>YouTube Video Editing</h3>
+        <div class="service-outcome">Cuts that hold viewers to the very last second.</div>
+        <span class="service-card-hint">See details →</span>
+      </a>
+      <a class="service-card" id="service-seo" href="services/seo.html">
+        <div class="service-proof"><img src="images/proof-seo-graphic.jpg" alt="SEO growth graphic representing search ranking improvements"></div>
+        <div class="service-icon">🔍</div>
+        <h3>YouTube SEO</h3>
+        <div class="service-outcome">Rank higher in search and get pushed by suggested.</div>
+        <span class="service-card-hint">See details →</span>
+      </a>
+      <a class="service-card" id="service-optimization" href="services/optimization.html">
+        <div class="service-proof"><video src="videos/promo-optimization.mp4" poster="images/poster-promo-optimization.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+        <div class="service-icon">🎯</div>
+        <h3>YouTube Channel Optimization</h3>
+        <div class="service-outcome">A channel page built to turn browsers into subscribers.</div>
+        <span class="service-card-hint">See details →</span>
+      </a>
+      <a class="service-card" id="service-twitch" href="services/twitch.html">
+        <div class="service-proof"><img src="images/proof-twitch-promo-thumb.webp" alt="Twitch Promotion thumbnail"></div>
+        <div class="service-icon">🎮</div>
+        <h3>Twitch Marketing</h3>
+        <div class="service-outcome">A live audience that actually shows up every stream.</div>
+        <span class="service-card-hint">See overlay designs →</span>
+      </a>
+      <a class="service-card" id="service-music" href="services/music.html">
+        <div class="service-proof"><img src="images/proof-music-promo.jpg" alt="Spotify music promotion graphic: real plays, SEO, organic growth"></div>
+        <div class="service-icon">🎵</div>
+        <h3>Music Promotion</h3>
+        <div class="service-outcome">Your tracks placed in front of listeners who actually save and share them.</div>
+        <span class="service-card-hint">See details →</span>
+      </a>
+      <a class="service-card" id="service-obs-studio" href="services/obs-studio.html">
+        <div class="service-proof"><img src="images/proof-obs-studio-thumb.webp" alt="OBS Studio for Beginners setup walkthrough"></div>
+        <div class="service-icon">🎥</div>
+        <h3>Twitch OBS Studio</h3>
+        <div class="service-outcome">A stream that looks and sounds professional from the first second you go live.</div>
+        <span class="service-card-hint">See details →</span>
+      </a>
+      <a class="service-card" id="service-merch" href="services/merch.html">
+        <div class="service-proof"><img src="images/merch-mockup-apparel-drinkware.jpg" alt="Branded apparel and drinkware merch mockup set"></div>
+        <div class="service-icon">🛍️</div>
+        <h3>Merch & Website Design</h3>
+        <div class="service-outcome">A simple store or site that matches your brand and doesn't scare off buyers.</div>
+        <span class="service-card-hint">See details →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section service-has-bg-video" id="results">
+  <div class="service-bg-video-wrap" aria-hidden="true">
+    <video class="service-bg-video" src="videos/about-page-bg.mp4" autoplay muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="wrap">
+    <div class="page-hero reveal" style="margin-bottom:52px;">
+      <span class="section-eyebrow">Results</span>
+      <h2>Real channels, real numbers</h2>
+      <p>A few projects pulled straight from client work: what the channel looked like, what I did, and what changed.</p>
+    </div>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-channel-dashboard.png" alt="Channel dashboard showing 3.4M views in 28 days and 737,840 subscribers"></div>
+        <div class="result-body">
+          <h3>Growth & Monetization Strategy (Educational Channel)</h3>
+          <p>Rebuilt the channel's content and upload strategy from the ground up to meet YouTube Partner Program requirements.</p>
+          <span class="result-outcome">First payout: $14,954.47</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-views-collage.jpg" alt="Multiple videos across the channel picking up view spikes"></div>
+        <div class="result-body">
+          <h3>YouTube Growth & SEO Overhaul</h3>
+          <p>Rewrote titles, tags, and metadata across the channel's back catalogue and tightened the upload cadence.</p>
+          <span class="result-outcome">72.7M views, 20.8M above usual</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-video-promotion.png" alt="YouTube video promotion service graphic: 100% real and organic, 10K to 100K views with likes and comments"></div>
+        <div class="result-body">
+          <h3>Organic Video Promotion & Channel Growth</h3>
+          <p>Ran an organic promotion strategy to get a stalled video in front of a much larger audience.</p>
+          <span class="result-outcome">Views: 300 → 10M+</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-partner-approval.jpg" alt="YouTube Partner Program approval email for a math education channel"></div>
+        <div class="result-body">
+          <h3>Partner Program Approval (Math Education Channel)</h3>
+          <p>Took a channel from zero monetization to an approved YouTube Partner in one focused push on watch hours and policy compliance.</p>
+          <span class="result-outcome">Approved for monetization</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-channel-stoopzz.png" alt="Stoopzz Highlights channel stats before and after growth, subscribers and views compared"></div>
+        <div class="result-body">
+          <h3>Channel Management & Growth (Stoopzz Highlights)</h3>
+          <p>Took over full channel management for a gaming highlights channel that had stalled at 1K subscribers with inconsistent uploads. Rebuilt the upload schedule, refreshed the branding, and kept content flowing every week.</p>
+          <span class="result-outcome">1K → 16.2K subscribers, 381K → 7.55M views</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-music-soundcloud.jpg" alt="SoundCloud plays, likes, and reposts before and after a promotion campaign"></div>
+        <div class="result-body">
+          <h3>SoundCloud Growth Campaign (HarlonQuentin)</h3>
+          <p>Ran a targeted promotion push for a new single, getting it in front of real, active listeners instead of empty numbers.</p>
+          <span class="result-outcome">446 → 10.2K plays</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-music-spotify.jpg" alt="Spotify plays before and after promotion for the single Drama"></div>
+        <div class="result-body">
+          <h3>Spotify Promotion ("Drama" by Kastillab)</h3>
+          <p>Placed the single in front of the right listeners on Spotify, turning a quiet release into a track people kept coming back to.</p>
+          <span class="result-outcome">Under 1,000 → 4,865 plays</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-music-playlist.jpg" alt="Four tracks on a playlist before and after promotion, each play count up sharply"></div>
+        <div class="result-body">
+          <h3>Playlist Placement & Promotion</h3>
+          <p>Got an artist's full playlist in front of new listeners, lifting every track on it, not just the lead single.</p>
+          <span class="result-outcome">Up to 27K plays per track</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-music-youtube.jpg" alt="YouTube views, likes, and subscribers before and after promotion for a music video"></div>
+        <div class="result-body">
+          <h3>Music Video Promotion (Jayful Filmz)</h3>
+          <p>Ran an organic promotion push on a released music video, growing views, engagement, and channel subscribers together.</p>
+          <span class="result-outcome">31K → 47K views</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-music-vanillabase.jpg" alt="Spotify plays before and after promotion for the Show Me You EP"></div>
+        <div class="result-body">
+          <h3>EP Promotion (Vanilla Base, "Show Me You")</h3>
+          <p>Promoted a full EP release on Spotify so it reached real listeners in its first weeks, not just algorithm test traffic.</p>
+          <span class="result-outcome">Under 1,000 → 4,301 plays</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-music-leylad.jpg" alt="Spotify plays before and after promotion for the single Lady Perfect"></div>
+        <div class="result-body">
+          <h3>Single Promotion (LeylaD, "Lady Perfect")</h3>
+          <p>Built listener momentum for a new single from a standing start, well past the plays it would have picked up on its own.</p>
+          <span class="result-outcome">Under 1,000 → 16.4K plays</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-payout-2997.jpg" alt="YouTube Studio partner payment sent, $2,997.80 for July earnings"></div>
+        <div class="result-body">
+          <h3>YouTube Partner Payout (July Earnings)</h3>
+          <p>A consistent upload schedule and stronger packaging turned a quiet month into a real payout, sent straight to the bank.</p>
+          <span class="result-outcome">Payment sent: $2,997.80</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-payout-16669.jpg" alt="YouTube Studio earnings screenshot showing a pending payment of $16,669.78 and $4,570.42 in November earnings"></div>
+        <div class="result-body">
+          <h3>YouTube Partner Payout (November Earnings)</h3>
+          <p>One of the strongest months yet for this channel: watch time and RPM climbing together instead of trading off against each other.</p>
+          <span class="result-outcome">Payment pending: $16,669.78</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-image"><img src="images/proof-payout-14954.jpg" alt="YouTube Studio screenshot showing You're a YouTube Partner with a pending payment of $14,954.47"></div>
+        <div class="result-body">
+          <h3>YouTube Partner Payout (First Payment)</h3>
+          <p>This channel's very first Partner Program payout, the direct result of rebuilding its upload strategy to meet monetization requirements.</p>
+          <span class="result-outcome">First payout: $14,954.47</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section service-has-bg-video" id="testimonials">
+  <div class="service-bg-video-wrap" aria-hidden="true">
+    <video class="service-bg-video" src="videos/about-page-bg.mp4" autoplay muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="wrap">
+    <div class="page-hero reveal" style="margin-bottom:52px;">
+      <span class="section-eyebrow">Testimonials</span>
+      <h2>What clients say</h2>
+      <p>Feedback pulled directly from completed projects.</p>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"James transformed my channel completely. The data-driven approach and automation systems tripled my watch time in just 90 days. The best investment I've made in my YouTube business."</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">S</div>
+          <div><div class="testimonial-name">Sarah Mitchell</div><div class="testimonial-role">Fitness Coach, FitLife with Sarah</div></div>
+        </div>
+      </div>
+      <a class="testimonial-card" href="https://www.upwork.com/freelancers/~0114f103cef5f4c0cb?mp_source=share" target="_blank" rel="noopener noreferrer">
+        <div class="stars">★★★★★</div>
+        <p>"Working with Moses has been an absolute game-changer for my YouTube channel. He is incredibly professional, highly talented, and always ahead of schedule."</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">C</div>
+          <div><div class="testimonial-name">YouTube Channel Client</div><div class="testimonial-role">Subscribers & Watch Hours project</div></div>
+        </div>
+        <div class="testimonial-link">View on Upwork →</div>
+      </a>
+      <a class="testimonial-card" href="https://www.upwork.com/freelancers/~0114f103cef5f4c0cb?mp_source=share" target="_blank" rel="noopener noreferrer">
+        <div class="stars">★★★★★</div>
+        <p>"It was a great experience working with Moses. They were clear about their goals, responsive to messages, and open to ideas throughout the project."</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">C</div>
+          <div><div class="testimonial-name">YouTube Channel Client</div><div class="testimonial-role">Channel Manager project</div></div>
+        </div>
+        <div class="testimonial-link">View on Upwork →</div>
+      </a>
+      <a class="testimonial-card" href="https://www.upwork.com/freelancers/~0114f103cef5f4c0cb?mp_source=share" target="_blank" rel="noopener noreferrer">
+        <div class="stars">★★★★★</div>
+        <p>"Moses is always a pleasure to work with. He is very professional, talented, responsive, and ahead of schedule. I highly suggest him to anyone wanting to improve their channel engagement."</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">C</div>
+          <div><div class="testimonial-name">YouTube Channel Client</div><div class="testimonial-role">Subscribers & Viewers project</div></div>
+        </div>
+        <div class="testimonial-link">View on Upwork →</div>
+      </a>
+      <a class="testimonial-card" href="https://www.upwork.com/freelancers/~0114f103cef5f4c0cb?mp_source=share" target="_blank" rel="noopener noreferrer">
+        <div class="stars">★★★★★</div>
+        <p>"Moses helped get my videos out on some forums like Discord. My views went up in the week that he worked on my project. He met the deadlines."</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">C</div>
+          <div><div class="testimonial-name">YouTube Channel Client</div><div class="testimonial-role">Channel SEO & Shorts project</div></div>
+        </div>
+        <div class="testimonial-link">View on Upwork →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section service-has-bg-video" id="faq">
+  <div class="service-bg-video-wrap" aria-hidden="true">
+    <video class="service-bg-video" src="videos/about-page-bg.mp4" autoplay muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="wrap">
+    <div class="page-hero reveal" style="margin-bottom:52px;">
+      <span class="section-eyebrow">FAQ</span>
+      <h2>Questions creators ask before we start</h2>
+      <p>Straight answers, no sales talk. If yours isn't here, use the chat bubble in the corner or send it through the contact form.</p>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>What services do you offer?</summary>
+        <p>YouTube Automation, YouTube Marketing, Video Editing, YouTube SEO, Channel Optimization, Twitch Marketing, Music Promotion, and Merch/Website Design. You can bundle a few together if your channel needs more than one thing fixed at once.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much does it cost?</summary>
+        <p>It depends on your channel's size and what you actually need, so I don't post a flat price list. Fill out the contact form with a bit about your channel and I'll send a real quote, not a generic package.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How long does it take to see results?</summary>
+        <p>It varies. Some channels see movement within a few weeks, others take a couple of months, especially if we're fixing years of inconsistent uploads. I'll give you an honest timeline after the first audit, not a guess to make the pitch sound better.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need to give you access to my channel?</summary>
+        <p>Depends on the service. Full channel management or automation needs manager-level access. SEO reviews, strategy, and consulting can usually be done over a call or screen-share, with you making the changes yourself if you'd rather keep full control.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is the music promotion real listeners, or bots?</summary>
+        <p>Real listeners through legitimate placement and targeting, not purchased plays. That's why the growth in the Results section climbs steadily instead of spiking overnight and disappearing a week later.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can you guarantee monetization or a certain number of subscribers?</summary>
+        <p>No one can honestly guarantee platform approval or exact numbers, and I won't pretend otherwise. What I can guarantee is a real plan built on what's worked for other channels, adjusted as your channel's numbers come in.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if my channel is brand new with zero subscribers?</summary>
+        <p>That's fine. I work with channels at every stage, from zero subscribers to a few hundred thousand. Newer channels often move faster because there's less to undo first.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How fast do you reply?</summary>
+        <p>Within 1 hour during active hours. If you message outside of that, you'll still hear back the same day in almost every case.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section service-has-bg-video" id="contact">
+  <div class="service-bg-video-wrap" aria-hidden="true">
+    <video class="service-bg-video" src="videos/about-page-bg.mp4" autoplay muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="wrap">
+    <div class="page-hero reveal" style="margin-bottom:40px;">
+      <span class="section-eyebrow">Contact</span>
+      <h2>Ready to grow your channel?</h2>
+      <p>Tell me where your channel is today and where you want it to be. I'll put together a plan.</p>
+    </div>
+    <div class="cta-section cta-form-section reveal" style="margin:0;">
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="New project inquiry from mosesjamesdave100.com">
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="you@channel.com" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cf-message">Tell me about your channel</label>
+          <textarea id="cf-message" name="message" rows="5" placeholder="Channel link, where you're stuck, what you want to grow" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary form-submit">
+          <span class="btn-label">Send message</span>
+        </button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+      <p class="form-fallback">Prefer email? <a href="mailto:mosesmiracledrumz@gmail.com">mosesmiracledrumz@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo"><img src="images/logo-badge.png" alt="Dave100 logo" class="logo-icon">Dave<span>100</span></div>
+        <p class="footer-tagline">YouTube Growth & Channel Strategy</p>
+      </div>
+      <div class="footer-col-group">
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="services/automation.html">YouTube Automation</a>
+            <a href="services/optimization.html">Channel Optimization</a>
+            <a href="services/seo.html">YouTube SEO</a>
+            <a href="#services">All services →</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Resources</div>
+          <div class="footer-links">
+            <a href="#results">Case Studies</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Free Audit</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Connect</div>
+          <div class="footer-social">
+            <a href="about.html">About</a>
+            <a href="https://www.upwork.com/freelancers/~0114f103cef5f4c0cb?mp_source=share" target="_blank" rel="noopener noreferrer">Upwork <span class="ext-arrow">↗</span></a>
+            <a href="https://www.fiverr.com/daveexpertsolut" target="_blank" rel="noopener noreferrer">Fiverr <span class="ext-arrow">↗</span></a>
+            <a href="https://www.instagram.com/dave100expert?igsh=YXFxeG90dHRzeHRy" target="_blank" rel="noopener noreferrer">Instagram <span class="ext-arrow">↗</span></a>
+            <a href="https://www.tiktok.com/@dave100pro?_r=1&_t=ZS-98qjq34Yhjo" target="_blank" rel="noopener noreferrer">TikTok <span class="ext-arrow">↗</span></a>
+            <a href="https://x.com/mosesmiracle111?s=11" target="_blank" rel="noopener noreferrer">X <span class="ext-arrow">↗</span></a>
+            <a href="https://www.linkedin.com/in/james-miracle-34a6613b3?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn <span class="ext-arrow">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Moses. All rights reserved.</span>
+      <span>YouTube Growth & Channel Strategy</span>
+    </div>
+  </div>
+</footer>
+
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a823860d009381d496a9891/1k06aofo2';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<script src="script.js"></script>
+</body>
+</html>

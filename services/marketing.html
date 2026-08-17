@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Marketing | Dave100</title>
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('moses-theme');
+    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+  }catch(e){}
+  try{
+    if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+    if(!location.hash){ window.scrollTo(0, 0); }
+  }catch(e){}
+})();
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../images/favicon-48.png">
+<link rel="apple-touch-icon" href="../images/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><img src="../images/logo-badge.png" alt="Dave100 logo" class="logo-icon">Dave<span>100</span></a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <div class="nav-dropdown" id="servicesDropdown">
+        <button type="button" class="nav-dropdown-trigger" id="servicesDropdownBtn" aria-expanded="false" aria-haspopup="true">
+          Services
+          <svg class="chevron" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dropdown-panel" id="servicesDropdownPanel" role="menu">
+          <a href="../services/automation.html" role="menuitem"><span>01</span>YouTube Automation</a>
+          <a href="../services/marketing.html" role="menuitem" class="is-current"><span>02</span>YouTube Marketing</a>
+          <a href="../services/editing.html" role="menuitem"><span>03</span>YouTube Video Editing</a>
+          <a href="../services/seo.html" role="menuitem"><span>04</span>YouTube SEO</a>
+          <a href="../services/optimization.html" role="menuitem"><span>05</span>YouTube Channel Optimization</a>
+          <a href="../services/twitch.html" role="menuitem"><span>06</span>Twitch Marketing</a>
+          <a href="../services/music.html" role="menuitem"><span>07</span>Music Promotion</a>
+          <a href="../services/obs-studio.html" role="menuitem"><span>08</span>Twitch OBS Studio</a>
+          <a href="../services/merch.html" role="menuitem"><span>09</span>Merch & Website Design</a>
+        </div>
+      </div>
+      <a href="../index.html#results">Results</a>
+      <a href="../index.html#testimonials">Testimonials</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button type="button" class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="4" cy="6" r="1.3" fill="currentColor"/><path d="M9 6h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="4" cy="12" r="1.3" fill="currentColor"/><path d="M9 12h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="4" cy="18" r="1.3" fill="currentColor"/><path d="M9 18h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" title="Switch theme">
+        <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.55 1.55M17.85 17.85l1.55 1.55M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.55-1.55M17.85 6.15l1.55-1.55" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <a href="../index.html#contact" class="nav-cta">Work with me</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer-overlay" id="mobileDrawerOverlay" aria-hidden="true"></div>
+<aside class="mobile-drawer" id="mobileDrawer" role="dialog" aria-label="Site menu" aria-hidden="true">
+  <div class="mobile-drawer-head">
+    <div class="logo">Dave<span>100</span></div>
+    <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-drawer-links" aria-label="Mobile site navigation">
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+
+    <div class="mobile-drawer-group" id="drawerServicesGroup">
+      <button type="button" class="mobile-drawer-group-trigger" id="drawerServicesTrigger" aria-expanded="false">
+        Services
+        <svg class="chevron" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="mobile-drawer-group-panel">
+        <div>
+          <div class="mobile-drawer-sublinks">
+          <a href="../services/automation.html">YouTube Automation</a>
+          <a href="../services/marketing.html" class="is-current">YouTube Marketing</a>
+          <a href="../services/editing.html">YouTube Video Editing</a>
+          <a href="../services/seo.html">YouTube SEO</a>
+          <a href="../services/optimization.html">Channel Optimization</a>
+          <a href="../services/twitch.html">Twitch Marketing</a>
+          <a href="../services/music.html">Music Promotion</a>
+          <a href="../services/obs-studio.html">Twitch OBS Studio</a>
+          <a href="../services/merch.html">Merch & Website Design</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mobile-drawer-section-title">Resources</div>
+    <a href="../index.html#results">Results</a>
+    <a href="../index.html#testimonials">Testimonials</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../index.html#contact">Contact</a>
+
+    <div class="mobile-drawer-section-title">Connect</div>
+          <a href="https://www.upwork.com/freelancers/~0114f103cef5f4c0cb?mp_source=share" target="_blank" rel="noopener noreferrer">Upwork <span class="ext-arrow">↗</span></a>
+          <a href="https://www.fiverr.com/daveexpertsolut" target="_blank" rel="noopener noreferrer">Fiverr <span class="ext-arrow">↗</span></a>
+          <a href="https://www.instagram.com/dave100expert?igsh=YXFxeG90dHRzeHRy" target="_blank" rel="noopener noreferrer">Instagram <span class="ext-arrow">↗</span></a>
+          <a href="https://www.tiktok.com/@dave100pro?_r=1&_t=ZS-98qjq34Yhjo" target="_blank" rel="noopener noreferrer">TikTok <span class="ext-arrow">↗</span></a>
+          <a href="https://x.com/mosesmiracle111?s=11" target="_blank" rel="noopener noreferrer">X <span class="ext-arrow">↗</span></a>
+          <a href="https://www.linkedin.com/in/james-miracle-34a6613b3?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn <span class="ext-arrow">↗</span></a>
+  </nav>
+  <div class="mobile-drawer-foot">
+    <a href="../index.html#contact" class="nav-cta">Work with me</a>
+  </div>
+</aside>
+
+<section class="section service-has-bg-video" id="top">
+  <div class="service-bg-video-wrap" aria-hidden="true">
+    <video class="service-bg-video" src="../videos/promo-marketing-bg.mp4" autoplay muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="wrap">
+    <a href="../index.html#services" class="service-back-link reveal">← All services</a>
+    <div class="service-detail-hero reveal">
+      <div class="service-detail-icon">📈</div>
+      <span class="section-eyebrow">Service 02</span>
+      <h1>YouTube Marketing</h1>
+      <div class="service-detail-outcome">Your videos reach the people already searching for them.</div>
+    </div>
+    <div class="service-detail-proof reveal">
+      <img src="../images/proof-video-330k.jpg" alt="Single video that reached 330,001 views">
+    </div>
+    <div class="service-detail-body reveal">
+      <p>I get your existing videos in front of the audience that's already searching for them: better titles and thumbnails, smarter tagging, cross-platform promotion, and community engagement that actually moves the algorithm instead of just looking busy.</p>
+    </div>
+    <div class="service-modal-tools-title reveal" style="margin-top:28px;">Tools I use</div>
+    <div class="service-modal-tools-list reveal">
+        <span>TubeBuddy</span>
+        <span>VidIQ</span>
+        <span>Canva</span>
+        <span>Analytics dashboards</span>
+    </div>
+
+    <div class="service-detail-ctas reveal">
+      <a href="../index.html#contact" class="btn-primary">Start this project</a>
+      <a href="../index.html#results" class="btn-secondary">See real results</a>
+    </div>
+
+    <div class="other-services reveal">
+      <div class="other-services-title">Other services</div>
+      <div class="other-services-list">
+        <a href="automation.html">YouTube Automation</a>
+        <a href="editing.html">YouTube Video Editing</a>
+        <a href="seo.html">YouTube SEO</a>
+        <a href="optimization.html">YouTube Channel Optimization</a>
+        <a href="twitch.html">Twitch Marketing</a>
+        <a href="music.html">Music Promotion</a>
+        <a href="obs-studio.html">Twitch OBS Studio</a>
+        <a href="merch.html">Merch & Website Design</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo"><img src="../images/logo-badge.png" alt="Dave100 logo" class="logo-icon">Dave<span>100</span></div>
+        <p class="footer-tagline">YouTube Growth &amp; Channel Strategy</p>
+      </div>
+      <div class="footer-col-group">
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="../services/automation.html">YouTube Automation</a>
+            <a href="../services/optimization.html">Channel Optimization</a>
+            <a href="../services/seo.html">YouTube SEO</a>
+            <a href="../index.html#services">All services →</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Resources</div>
+          <div class="footer-links">
+            <a href="../index.html#results">Case Studies</a>
+            <a href="../index.html#testimonials">Testimonials</a>
+            <a href="../index.html#faq">FAQ</a>
+            <a href="../index.html#contact">Free Audit</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Connect</div>
+          <div class="footer-social">
+            <a href="../about.html">About</a>
+            <a href="https://www.upwork.com/freelancers/~0114f103cef5f4c0cb?mp_source=share" target="_blank" rel="noopener noreferrer">Upwork <span class="ext-arrow">↗</span></a>
+            <a href="https://www.fiverr.com/daveexpertsolut" target="_blank" rel="noopener noreferrer">Fiverr <span class="ext-arrow">↗</span></a>
+            <a href="https://www.instagram.com/dave100expert?igsh=YXFxeG90dHRzeHRy" target="_blank" rel="noopener noreferrer">Instagram <span class="ext-arrow">↗</span></a>
+            <a href="https://www.tiktok.com/@dave100pro?_r=1&_t=ZS-98qjq34Yhjo" target="_blank" rel="noopener noreferrer">TikTok <span class="ext-arrow">↗</span></a>
+            <a href="https://x.com/mosesmiracle111?s=11" target="_blank" rel="noopener noreferrer">X <span class="ext-arrow">↗</span></a>
+            <a href="https://www.linkedin.com/in/james-miracle-34a6613b3?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn <span class="ext-arrow">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Moses. All rights reserved.</span>
+      <span>YouTube Growth &amp; Channel Strategy</span>
+    </div>
+  </div>
+</footer>
+
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a823860d009381d496a9891/1k06aofo2';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<script src="../script.js"></script>
+</body>
+</html>
