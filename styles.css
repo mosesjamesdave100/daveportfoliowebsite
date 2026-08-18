@@ -694,6 +694,8 @@ footer{padding:64px 0 40px;border-top:1px solid var(--hairline);margin-top:40px;
 .footer-links a:hover{color:var(--text);}
 .footer-social{display:flex;flex-direction:column;gap:11px;font-size:14px;font-weight:500;color:var(--text-dim);}
 .footer-social a:hover{color:var(--accent-bright);}
+.social-discord,.footer-social .social-discord{cursor:default;}
+.social-discord:hover{background:none!important;color:inherit!important;}
 .ext-arrow{font-size:11px;opacity:.6;}
 .footer-bottom{margin-top:48px;font-size:13px;color:var(--text-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 
