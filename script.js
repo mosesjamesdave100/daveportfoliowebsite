@@ -196,6 +196,45 @@ if(!reducedMotion && window.matchMedia('(pointer: fine)').matches && heroOrbit){
   });
 })();
 
+/* ---- growth-plan wizard: step navigation ---- */
+(function(){
+  const form = document.getElementById('contactForm');
+  const panels = form ? Array.from(form.querySelectorAll('.wizard-panel')) : [];
+  if(!form || !panels.length) return;
+  const stepBtns = Array.from(form.querySelectorAll('.wizard-step'));
+  const fill = document.getElementById('wizardProgressFill');
+  const total = panels.length;
+  let current = 1;
+  let maxReached = 1;
+
+  function render(){
+    panels.forEach(p => p.classList.toggle('is-active', Number(p.dataset.step) === current));
+    stepBtns.forEach(btn => {
+      const n = Number(btn.dataset.step);
+      btn.classList.toggle('is-current', n === current);
+      btn.classList.toggle('is-done', n < current);
+      btn.disabled = n > maxReached;
+    });
+    if(fill) fill.style.width = ((current - 1) / (total - 1) * 100) + '%';
+  }
+
+  function goTo(n){
+    current = Math.min(Math.max(n, 1), total);
+    if(current > maxReached) maxReached = current;
+    render();
+    form.closest('.wizard-card').scrollIntoView({block:'nearest', behavior: reducedMotion ? 'auto' : 'smooth'});
+  }
+
+  form.querySelectorAll('[data-wizard-next]').forEach(btn => btn.addEventListener('click', () => goTo(current + 1)));
+  form.querySelectorAll('[data-wizard-back]').forEach(btn => btn.addEventListener('click', () => goTo(current - 1)));
+  stepBtns.forEach(btn => btn.addEventListener('click', () => {
+    const n = Number(btn.dataset.step);
+    if(n <= maxReached) goTo(n);
+  }));
+
+  render();
+})();
+
 /* ---- contact form: Formspree ---- */
 (function(){
   const form = document.getElementById('contactForm');
