@@ -225,7 +225,49 @@ if(!reducedMotion && window.matchMedia('(pointer: fine)').matches && heroOrbit){
     form.closest('.wizard-card').scrollIntoView({block:'nearest', behavior: reducedMotion ? 'auto' : 'smooth'});
   }
 
-  form.querySelectorAll('[data-wizard-next]').forEach(btn => btn.addEventListener('click', () => goTo(current + 1)));
+  // every question on a step must be answered before Next is allowed
+  function validateStep(panel){
+    let ok = true;
+    let firstInvalid = null;
+    const errorMsg = panel.querySelector('.wizard-error');
+    panel.querySelectorAll('.wfield').forEach(field => {
+      let fieldOk = true;
+
+      field.querySelectorAll('input[required], select[required], textarea[required]').forEach(el => {
+        if(el.offsetParent === null) return; // conditionally hidden, not this step's concern
+        if(!el.value.trim()) fieldOk = false;
+      });
+
+      if(field.hasAttribute('data-required')){
+        const checked = field.querySelectorAll('.pill-group input:checked');
+        if(checked.length === 0){
+          fieldOk = false;
+        } else if(field.hasAttribute('data-other-group')){
+          const isOther = Array.from(checked).some(c => c.value === 'Other');
+          const otherInput = field.querySelector('.other-input');
+          if(isOther && otherInput && !otherInput.value.trim()) fieldOk = false;
+        }
+      }
+
+      field.classList.toggle('has-error', !fieldOk);
+      if(!fieldOk){
+        ok = false;
+        if(!firstInvalid) firstInvalid = field.querySelector('input, select, textarea');
+      }
+    });
+    if(errorMsg) errorMsg.hidden = ok;
+    if(!ok && firstInvalid) firstInvalid.focus({preventScroll:true});
+    return ok;
+  }
+
+  form.addEventListener('input', (e) => e.target.closest('.wfield.has-error')?.classList.remove('has-error'));
+  form.addEventListener('change', (e) => e.target.closest('.wfield.has-error')?.classList.remove('has-error'));
+
+  form.querySelectorAll('[data-wizard-next]').forEach(btn => btn.addEventListener('click', () => {
+    const panel = btn.closest('.wizard-panel');
+    if(!validateStep(panel)) return;
+    goTo(current + 1);
+  }));
   form.querySelectorAll('[data-wizard-back]').forEach(btn => btn.addEventListener('click', () => goTo(current - 1)));
   stepBtns.forEach(btn => btn.addEventListener('click', () => {
     const n = Number(btn.dataset.step);
@@ -233,6 +275,39 @@ if(!reducedMotion && window.matchMedia('(pointer: fine)').matches && heroOrbit){
   }));
 
   render();
+})();
+
+/* ---- growth-plan wizard: "Other" pill reveals a custom text input ---- */
+(function(){
+  document.querySelectorAll('.wfield[data-other-group]').forEach(wrap => {
+    const otherInput = wrap.querySelector('.other-input');
+    const inputs = wrap.querySelectorAll('.pill-group input');
+    if(!otherInput || !inputs.length) return;
+    function sync(){
+      const isOther = Array.from(inputs).some(i => i.checked && i.value === 'Other');
+      otherInput.hidden = !isOther;
+      if(!isOther) otherInput.value = '';
+    }
+    inputs.forEach(i => i.addEventListener('change', sync));
+    sync();
+  });
+})();
+
+/* ---- growth-plan wizard: WhatsApp/Call reveals a phone number field ---- */
+(function(){
+  const group = document.getElementById('preferredContactGroup');
+  const phoneField = document.getElementById('phoneField');
+  const phoneInput = document.getElementById('w-phone');
+  if(!group || !phoneField || !phoneInput) return;
+  function sync(){
+    const checked = group.querySelector('input:checked');
+    const needsPhone = !!checked && (checked.value === 'WhatsApp' || checked.value === 'Call');
+    phoneField.hidden = !needsPhone;
+    phoneInput.required = needsPhone;
+    if(!needsPhone) phoneInput.value = '';
+  }
+  group.querySelectorAll('input').forEach(i => i.addEventListener('change', sync));
+  sync();
 })();
 
 /* ---- contact form: Formspree ---- */

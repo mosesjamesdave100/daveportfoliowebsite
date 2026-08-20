@@ -599,9 +599,9 @@
           <h3 class="wizard-step-title">About Your Channel</h3>
           <div class="wfield">
             <label for="w-channel-url">Channel name / URL</label>
-            <input type="text" id="w-channel-url" name="channel_url" placeholder="e.g. youtube.com/@yourchannel">
+            <input type="text" id="w-channel-url" name="channel_url" placeholder="e.g. youtube.com/@yourchannel" required>
           </div>
-          <div class="wfield">
+          <div class="wfield" data-required>
             <label>Platform</label>
             <div class="pill-group">
               <label class="pill-option"><input type="radio" name="platform" value="YouTube"><span>YouTube</span></label>
@@ -611,15 +611,15 @@
           </div>
           <div class="wfield">
             <label for="w-sub-count">Current subscriber/follower count</label>
-            <input type="text" id="w-sub-count" name="subscriber_count" placeholder="e.g. 2500">
+            <input type="text" id="w-sub-count" name="subscriber_count" placeholder="e.g. 2500" required>
           </div>
           <div class="wfield">
             <label for="w-niche">Content niche/category</label>
-            <input type="text" id="w-niche" name="niche" placeholder="e.g. Gaming, Tech, Lifestyle">
+            <input type="text" id="w-niche" name="niche" placeholder="e.g. Gaming, Tech, Lifestyle" required>
           </div>
           <div class="wfield">
             <label for="w-age">How long has the channel been active?</label>
-            <select id="w-age" name="channel_age">
+            <select id="w-age" name="channel_age" required>
               <option value="">Select one</option>
               <option>Less than 3 months</option>
               <option>3–6 months</option>
@@ -628,7 +628,7 @@
               <option>2+ years</option>
             </select>
           </div>
-          <div class="wfield">
+          <div class="wfield" data-required>
             <label>How often do you currently upload?</label>
             <div class="pill-group">
               <label class="pill-option"><input type="radio" name="upload_frequency" value="Daily"><span>Daily</span></label>
@@ -637,6 +637,7 @@
               <label class="pill-option"><input type="radio" name="upload_frequency" value="Inconsistent"><span>Inconsistent</span></label>
             </div>
           </div>
+          <p class="wizard-error" hidden>Please answer every question before continuing.</p>
           <div class="wizard-nav wizard-nav-end">
             <button type="button" class="btn-primary" data-wizard-next>Next →</button>
           </div>
@@ -644,7 +645,7 @@
 
         <div class="wizard-panel" data-step="2">
           <h3 class="wizard-step-title">Current Situation</h3>
-          <div class="wfield">
+          <div class="wfield" data-required>
             <label>Is your channel currently monetized?</label>
             <div class="pill-group">
               <label class="pill-option"><input type="radio" name="monetized" value="Yes"><span>Yes</span></label>
@@ -652,7 +653,7 @@
               <label class="pill-option"><input type="radio" name="monetized" value="Applied but not approved"><span>Applied but not approved</span></label>
             </div>
           </div>
-          <div class="wfield">
+          <div class="wfield" data-required>
             <label>Are you Twitch Partner/Affiliate?</label>
             <div class="pill-group">
               <label class="pill-option"><input type="radio" name="twitch_status" value="Partner"><span>Partner</span></label>
@@ -661,24 +662,26 @@
               <label class="pill-option"><input type="radio" name="twitch_status" value="N/A — I'm YouTube only"><span>N/A — I'm YouTube only</span></label>
             </div>
           </div>
-          <div class="wfield">
+          <div class="wfield" data-required>
             <label>Have you worked with a promoter/agency before?</label>
             <div class="pill-group">
               <label class="pill-option"><input type="radio" name="worked_with_agency" value="Yes"><span>Yes</span></label>
               <label class="pill-option"><input type="radio" name="worked_with_agency" value="No"><span>No</span></label>
             </div>
           </div>
-          <div class="wfield">
-            <label>What's your biggest challenge right now?</label>
+          <div class="wfield" data-other-group data-required>
+            <label>What's your biggest challenge right now? <span class="field-hint">(choose all that apply)</span></label>
             <div class="pill-group">
-              <label class="pill-option"><input type="radio" name="biggest_challenge" value="Low views"><span>Low views</span></label>
-              <label class="pill-option"><input type="radio" name="biggest_challenge" value="Slow subscriber growth"><span>Slow subscriber growth</span></label>
-              <label class="pill-option"><input type="radio" name="biggest_challenge" value="Inconsistent content"><span>Inconsistent content</span></label>
-              <label class="pill-option"><input type="radio" name="biggest_challenge" value="Poor SEO/discoverability"><span>Poor SEO/discoverability</span></label>
-              <label class="pill-option"><input type="radio" name="biggest_challenge" value="Don't know where to start"><span>Don't know where to start</span></label>
-              <label class="pill-option"><input type="radio" name="biggest_challenge" value="Other"><span>Other</span></label>
+              <label class="pill-option"><input type="checkbox" name="biggest_challenge" value="Low views"><span>Low views</span></label>
+              <label class="pill-option"><input type="checkbox" name="biggest_challenge" value="Slow subscriber growth"><span>Slow subscriber growth</span></label>
+              <label class="pill-option"><input type="checkbox" name="biggest_challenge" value="Inconsistent content"><span>Inconsistent content</span></label>
+              <label class="pill-option"><input type="checkbox" name="biggest_challenge" value="Poor SEO/discoverability"><span>Poor SEO/discoverability</span></label>
+              <label class="pill-option"><input type="checkbox" name="biggest_challenge" value="Don't know where to start"><span>Don't know where to start</span></label>
+              <label class="pill-option"><input type="checkbox" name="biggest_challenge" value="Other"><span>Other</span></label>
             </div>
+            <input type="text" class="other-input" name="biggest_challenge_other" placeholder="Describe your biggest challenge…" hidden>
           </div>
+          <p class="wizard-error" hidden>Please answer every question before continuing.</p>
           <div class="wizard-nav">
             <button type="button" class="btn-secondary" data-wizard-back>← Back</button>
             <button type="button" class="btn-primary" data-wizard-next>Next →</button>
@@ -687,7 +690,7 @@
 
         <div class="wizard-panel" data-step="3">
           <h3 class="wizard-step-title">Goals & Objectives</h3>
-          <div class="wfield">
+          <div class="wfield" data-other-group data-required>
             <label>What's your main goal?</label>
             <div class="pill-group">
               <label class="pill-option"><input type="radio" name="main_goal" value="Grow subscribers"><span>Grow subscribers</span></label>
@@ -697,12 +700,13 @@
               <label class="pill-option"><input type="radio" name="main_goal" value="Full channel management"><span>Full channel management</span></label>
               <label class="pill-option"><input type="radio" name="main_goal" value="Other"><span>Other</span></label>
             </div>
+            <input type="text" class="other-input" name="main_goal_other" placeholder="Describe your main goal…" hidden>
           </div>
           <div class="wfield">
             <label for="w-vision">What does success look like in 6 months?</label>
-            <textarea id="w-vision" name="vision_6_months" rows="4" placeholder="Describe your vision…"></textarea>
+            <textarea id="w-vision" name="vision_6_months" rows="4" placeholder="Describe your vision…" required></textarea>
           </div>
-          <div class="wfield">
+          <div class="wfield" data-required>
             <label>How soon are you looking to get started?</label>
             <div class="pill-group">
               <label class="pill-option"><input type="radio" name="start_timeline" value="Immediately"><span>Immediately</span></label>
@@ -711,6 +715,7 @@
               <label class="pill-option"><input type="radio" name="start_timeline" value="Just exploring"><span>Just exploring</span></label>
             </div>
           </div>
+          <p class="wizard-error" hidden>Please answer every question before continuing.</p>
           <div class="wizard-nav">
             <button type="button" class="btn-secondary" data-wizard-back>← Back</button>
             <button type="button" class="btn-primary" data-wizard-next>Next →</button>
@@ -719,7 +724,7 @@
 
         <div class="wizard-panel" data-step="4">
           <h3 class="wizard-step-title">Revenue Target</h3>
-          <div class="wfield">
+          <div class="wfield" data-other-group data-required>
             <label>How much monthly revenue are you aiming to generate from this channel?</label>
             <div class="pill-group">
               <label class="pill-option"><input type="radio" name="revenue_target" value="Under $1,000/month"><span>Under $1,000/month</span></label>
@@ -728,7 +733,9 @@
               <label class="pill-option"><input type="radio" name="revenue_target" value="$10,000+/month"><span>$10,000+/month</span></label>
               <label class="pill-option"><input type="radio" name="revenue_target" value="Other"><span>Other</span></label>
             </div>
+            <input type="text" class="other-input" name="revenue_target_other" placeholder="Enter a custom revenue target…" hidden>
           </div>
+          <p class="wizard-error" hidden>Please answer every question before continuing.</p>
           <div class="wizard-nav">
             <button type="button" class="btn-secondary" data-wizard-back>← Back</button>
             <button type="button" class="btn-primary" data-wizard-next>Next →</button>
@@ -737,7 +744,7 @@
 
         <div class="wizard-panel" data-step="5">
           <h3 class="wizard-step-title">Budget</h3>
-          <div class="wfield">
+          <div class="wfield" data-other-group data-required>
             <label>How much are you looking to invest in this project?</label>
             <div class="pill-group">
               <label class="pill-option"><input type="radio" name="budget" value="$499"><span>$499</span></label>
@@ -747,7 +754,9 @@
               <label class="pill-option"><input type="radio" name="budget" value="$5,000+"><span>$5,000+</span></label>
               <label class="pill-option"><input type="radio" name="budget" value="Other"><span>Other</span></label>
             </div>
+            <input type="text" class="other-input" name="budget_other" placeholder="Enter a custom budget…" hidden>
           </div>
+          <p class="wizard-error" hidden>Please answer every question before continuing.</p>
           <div class="wizard-nav">
             <button type="button" class="btn-secondary" data-wizard-back>← Back</button>
             <button type="button" class="btn-primary" data-wizard-next>Next →</button>
@@ -765,16 +774,16 @@
             <input type="email" id="w-email" name="email" required>
           </div>
           <div class="wfield">
-            <label for="w-phone">Phone/WhatsApp</label>
-            <input type="text" id="w-phone" name="phone" placeholder="Optional">
-          </div>
-          <div class="wfield">
             <label>Preferred contact method</label>
-            <div class="pill-group">
+            <div class="pill-group" id="preferredContactGroup">
               <label class="pill-option"><input type="radio" name="preferred_contact" value="Email"><span>Email</span></label>
               <label class="pill-option"><input type="radio" name="preferred_contact" value="WhatsApp"><span>WhatsApp</span></label>
               <label class="pill-option"><input type="radio" name="preferred_contact" value="Call"><span>Call</span></label>
             </div>
+          </div>
+          <div class="wfield" id="phoneField" hidden>
+            <label for="w-phone">Phone/WhatsApp number <span class="required">*</span></label>
+            <input type="text" id="w-phone" name="phone" placeholder="e.g. +1 555 123 4567">
           </div>
           <div class="wizard-nav">
             <button type="button" class="btn-secondary" data-wizard-back>← Back</button>

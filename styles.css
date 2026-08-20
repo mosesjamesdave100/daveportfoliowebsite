@@ -714,6 +714,9 @@ nav .logo{margin-right:16px;flex:none;}
 .wfield{margin-bottom:20px;}
 .wfield label{display:block;font-size:13px;font-weight:600;color:var(--text-dim);margin-bottom:8px;}
 .wfield .required{color:var(--accent-bright);}
+.wfield .field-hint{font-weight:400;color:var(--text-faint);text-transform:none;letter-spacing:0;}
+.other-input{margin-top:12px;}
+.other-input[hidden]{display:none;}
 .wfield input,.wfield textarea,.wfield select{
   width:100%;padding:12px 14px;font:inherit;font-size:14px;color:var(--text);
   background:var(--bg);border:1px solid var(--hairline-strong);border-radius:10px;
@@ -734,6 +737,11 @@ nav .logo{margin-right:16px;flex:none;}
 .pill-option span:hover{border-color:var(--accent-line);color:var(--text);}
 .pill-option input:checked + span{background:var(--accent-wash);border-color:var(--accent);color:var(--accent-bright);}
 .pill-option input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px;}
+
+.wfield.has-error label{color:var(--yt-red);}
+.wfield.has-error input,.wfield.has-error select,.wfield.has-error textarea{border-color:var(--yt-red);}
+.wfield.has-error .pill-option span{border-color:rgba(255,43,43,0.45);}
+.wizard-error{color:var(--yt-red);font-size:13px;font-weight:600;margin:-8px 0 16px;}
 
 .wizard-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:8px;}
 .wizard-nav-end{justify-content:flex-end;}
